@@ -33,3 +33,7 @@ function addBookToLibrary(book) {
 
 };
 
+function openAddBookDialog() {
+    
+}
+
