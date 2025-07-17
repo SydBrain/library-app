@@ -1,18 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script defer type="module" src="script.js"></script>
-   <title>Library App</title>
+    <title>Library App</title>
 </head>
+
 <body>
     <main class="flex-center">
-        <button class="main-btn" type="button">Add New Book</button>
-        <dialog class="dialog">
-            <form action=""></form>
+        <button class="main-btn" type="button" id="addBookBtn">Add New Book</button>
+        <dialog class="dialog" id="addBookDialog">
+            <form action="" method="dialog" class="form-element" id="addBookForm">
+                <button id="close" aria-label="close" formnovalidate>X</button>
+                <div class="form-field">
+                    <label for="name">Title</label>
+                    <input type="text" name="title" id="title" required />
+                </div>
+                <div class="form-field">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author" required />
+                </div>
+                <div class="form-field">
+                    <label for="pages">Pages</label>
+                    <input type="number" name="pages" id="pages" />
+                </div>
+                <div class="form-field">
+                    <label for="description">Description</label>
+                    <input type="textarea" name="description" id="description" />
+                </div>
+                <div class="form-field">
+                    <label for="hasBeenRead">Did you read it?</label>
+                    <select name="hasBeenRead" id="hasBeenRead">
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <label for="imageUrl">Book Cover</label>
+                    <input type="url" name="imageUrl" id="imageUrl" placeholder="Image URL (optional)" />
+                </div>
+                <div class="form-field">
+                    <input type="submit" value="Add Book" id="submitBookBtn" />
+                </div>
+            </form>
         </dialog>
     </main>
 </body>
+
 </html>
