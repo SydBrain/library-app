@@ -5,7 +5,7 @@ export const initialBooks = [
         pages: 412,
         description: "Dune is a 1965 epic science fiction novel by American author Frank Herbert",
         hasBeenRead: true,
-        imageUrl: './media/images/dunecover.jpg'
+        imageUrl: '../../media/images/dunecover.jpg'
     },
     {
         title: "Neuromancer",
@@ -13,7 +13,7 @@ export const initialBooks = [
         pages: 271,
         description: "Neuromancer is a 1984 science fiction novel that helped define the cyberpunk genre.",
         hasBeenRead: false,
-        imageUrl: './media/images/neuromancercover.jpg'
+        imageUrl: '../../media/images/neuromancercover.jpg'
     },
     {
         title: "Foundation",
@@ -21,6 +21,6 @@ export const initialBooks = [
         pages: 255,
         description: "Foundation is a science fiction novel that explores the collapse and rebirth of a galactic empire.",
         hasBeenRead: true,
-        imageUrl: './media/images/foundationcover.jpg'
+        imageUrl: '../../media/images/foundationcover.jpg.jpg'
     }
 ];

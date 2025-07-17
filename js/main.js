@@ -1,27 +1,16 @@
-import { initialBooks } from "./books.js";
+import { initialBooks } from "./data/initialBooks.js";
+import { Book } from "./model/book.js";
+import { 
+  addBookBtn, 
+  addBookForm, 
+  openBookDialog, 
+  closeBookDialog 
+} from "./ui/ui.js";
 
-// ===== DOM Elements =====
-const addBookBtn = document.getElementById('addBookBtn');
-const addBookDialog = document.getElementById('addBookDialog');
-const addBookForm = document.getElementById('addBookForm');
-
-// ===== Data Store =====
+// Data Store
 const myLibrary = [];
 
-// ===== Book Class =====
-class Book {
-    constructor({title, author, pages, description, hasBeenRead, imageUrl = ""}) {
-        this.id = crypto.randomUUID();
-        this.title = title;
-        this.author = author;
-        this.pages = Number(pages); 
-        this.description = description;
-        this.hasBeenRead = hasBeenRead === "true"; 
-        this.imageUrl = imageUrl;
-    }
-}
-
-// ===== Functions =====
+// Functions 
 function addBookToLibrary(book) {
     if (book instanceof Book) {
         myLibrary.push(book);
@@ -30,15 +19,7 @@ function addBookToLibrary(book) {
     }
 }
 
-function openBookDialog() {
-    addBookDialog.showModal();
-}
-
-function closeBookDialog() {
-    addBookDialog.close();
-}
-
-// ===== Event Listeners =====
+// Event Listeners 
 addBookBtn.addEventListener('click', openBookDialog);
 
 addBookForm.addEventListener('submit', (e) => {
@@ -55,7 +36,7 @@ addBookForm.addEventListener('submit', (e) => {
     addBookForm.reset();
 });
 
-// ===== Initialization =====
+// Initialization
 initialBooks.forEach(bookData => {
     const book = new Book(
         bookData.title,
