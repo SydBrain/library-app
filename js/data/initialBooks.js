@@ -1,4 +1,4 @@
-export const initialBooks = [
+const initialBooks = [
     {
         title: "Dune",
         author: "Frank Herbert",
@@ -24,3 +24,7 @@ export const initialBooks = [
         imageUrl: '../../media/images/foundationcover.jpg.jpg'
     }
 ];
+
+export {
+    initialBooks,
+}

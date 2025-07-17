@@ -9,3 +9,7 @@ class Book {
         this.imageUrl = imageUrl;
     }
 }
+
+export {
+    Book,
+}
