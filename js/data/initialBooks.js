@@ -21,7 +21,7 @@ const initialBooks = [
         pages: 255,
         description: "Foundation is a science fiction novel that explores the collapse and rebirth of a galactic empire.",
         hasBeenRead: true,
-        imageUrl: '../../media/images/foundationcover.jpg.jpg'
+        imageUrl: '../../media/images/foundationcover.jpg'
     }
 ];
 

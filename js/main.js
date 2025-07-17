@@ -4,7 +4,9 @@ import {
   addBookBtn, 
   addBookForm, 
   openBookDialog, 
-  closeBookDialog 
+  closeBookDialog, 
+  createBookCard,
+  closeDialogBtn,
 } from "./ui/ui.js";
 
 // Data Store
@@ -21,6 +23,7 @@ function addBookToLibrary(book) {
 
 // Event Listeners 
 addBookBtn.addEventListener('click', openBookDialog);
+closeDialogBtn.addEventListener('click', closeBookDialog);
 
 addBookForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -30,23 +33,31 @@ addBookForm.addEventListener('submit', (e) => {
     const newBook = new Book(data);
 
     addBookToLibrary(newBook);
+    createBookCard(newBook);
 
     closeBookDialog();
     
     addBookForm.reset();
 });
 
-// Initialization
-initialBooks.forEach(bookData => {
-    const book = new Book(
-        bookData.title,
-        bookData.author,
-        bookData.pages,
-        bookData.description,
-        bookData.hasBeenRead,
-        bookData.imageUrl
-    );
-    myLibrary.push(book);
+libraryContainer.addEventListener('click', (e) => {
+  if (e.target.dataset.action === 'delete-book') {
+    const card = e.target.closest('.book-card');
+    const id = card.dataset.id;
+
+    const index = myLibrary.findIndex(book => book.id === id);
+    if (index !== -1) {
+      myLibrary.splice(index, 1);
+    }
+
+    card.remove();
+  }
 });
 
-console.log("Initial library:", myLibrary);
+// Initialization
+initialBooks.forEach(book => {
+    const newBook = new Book(book);
+    addBookToLibrary(newBook);
+    createBookCard(newBook);
+});
+

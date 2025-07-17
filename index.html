@@ -10,11 +10,14 @@
 </head>
 
 <body>
-    <main class="flex-center">
+    <main>
+        <section class="library-container" id="libraryContainer">
+
+        </section>
         <button class="main-btn" type="button" id="addBookBtn">Add New Book</button>
         <dialog class="dialog" id="addBookDialog">
             <form action="" method="dialog" class="form-element" id="addBookForm">
-                <button id="close" aria-label="close" formnovalidate>X</button>
+                <button type="button" id="closeDialogBtn" aria-label="close" formnovalidate>X</button>
                 <div class="form-field">
                     <label for="name">Title</label>
                     <input type="text" name="title" id="title" required />
